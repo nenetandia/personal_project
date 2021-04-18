@@ -1,0 +1,41 @@
+<%- include('../../includes/header.ejs') %>
+
+<% if(locals.message) { %>
+  <div class="ui green message">
+    <%- message %>
+  </div>
+<% } %>
+<% if(locals.errMessage) { %>
+  <div class="ui red message">
+    <%- errMessage %>
+  </div>
+<% } %>
+
+<form action="/admin/add_article" method="post" enctype="multipart/form-data" class="ui form">
+  <div>
+    <input type="file" name="photos"/>
+  </div>   
+    <div class="field">
+      <label>Titre :</label>
+      <input type="text" name="title">
+    </div>
+    <div class="field">
+      <label>Auteur :</label>
+      <input type="text" name="author"/>
+    </div>
+    <div class="field">
+        <select name="category" >
+          <option value="">Catégorie</option>
+          <option value="1">Production Végétale</option>
+          <option value="2">Biotechnologie végétale</option>
+          <option value="3">Protection des végétaux</option>
+        </select>
+    </div>
+    <div class="field">
+        <label for="text">Text :</label>
+        <textarea id="text" name="text"></textarea>
+    </div>
+    
+    <button class="ui button" type="submit">add</button>
+  </form>
+<%- include('../../includes/footer.ejs') %>

@@ -1,0 +1,43 @@
+<%- include('../../includes/header.ejs') %>
+
+<!-- ------- alert message---------- -->
+<div>
+  <% if(locals.updateMessage) { %>
+    <h4 class="ui orange message "><%- updateMessage%></h4>
+   <% }%>
+</div>
+<!-- ------- fin alert message---------- -->
+
+<% if (locals.articles) { for(article of articles) {%>
+    
+<h3>Modifier un article</h3>
+<form method="post" enctype="multipart/form-data" class="ui form">
+      <div>
+        <input type="file" name="photos"><%= article.photos %></input>
+      </div>
+      <div class="field">
+        <label>Titre  :</label>
+        <input type="text" name="title" value="<%= article.Titre %>">
+      </div>
+      <div class="field">
+        <label>Auteur :</label>
+        <input type="text" name="author" value="<%= article.auteur %>">
+      </div>
+      <div class="field">
+          <select name="category" >
+            <option value="">Catégorie</option>
+            <option value="1">Production Végétale</option>
+            <option value="2">Biotechnologie végétale</option>
+            <option value="3">Protection des végétaux</option>
+          </select>
+      </div>
+      <div class="field">
+          <label for="text">Text :</label>
+          <textarea id="text" name="text" value="<%= article.content %>"><%- article.content %></textarea>
+      </div>
+      
+      <button class="ui button" type="submit">Modifier</button>
+    </form>
+    <% } }%>
+
+    <%- include('../../includes/footer.ejs') %>

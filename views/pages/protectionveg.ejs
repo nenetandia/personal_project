@@ -1,0 +1,28 @@
+<%- include('../includes/header.ejs') %>
+    <div>
+        <h2>Protection des végétaux</h2>
+        <% for (result of results) {%>
+          <div class="item">
+              <div class="ui small image">
+                <img class="ui top aligned tiny image" src="/img/<%- result.photos %>">
+              </div>
+              <div class="middle aligned content">
+                <div class="header"><%- result.Titre %></div>
+                <div class="meta"><%- result.auteur %></div>
+                <div class="meta"><%- result.post_at %></div>
+                <div class="description">
+                  <%- result.content.slice(0, 500) %>
+                </div>
+                <div class="extra">
+                 <a href="/article?id=<%- result.idArticles %>">
+                  <div class="ui right floated button">
+                    lire
+                  </div>
+                </a>
+                </div>
+              </div>
+            </div>
+      <% }%>
+  </div>
+    </div>   
+<%- include('../includes/footer.ejs') %>

@@ -1,0 +1,70 @@
+<%- include('../includes/header.ejs') %>
+<div>
+  <% if(locals.message) { %>
+  <h4 class="ui orange message "><%- message%></h4>
+ <% }%>
+</div>  
+<div>
+  <% if(locals.errmessage) { %>
+  <h4 class="ui red message "><%- errmessage%></h4>
+ <% }%>
+</div>  
+<div class="adjust">
+  <div class="ui card">
+    <div class="content">
+      <div class="header head">DEVENIR MEMBRE</div>
+      <div class="description">
+        <form class="ui form" action="/inscription" method="post">
+        <div class="ui form">
+          <div class="two fields">
+            <div  class="field">
+              <label>Prénom</label>
+              <input placeholder="prenom" type="text" name="name">
+            </div class="field error">
+            <div  class="field">
+              <label>Nom</label>
+              <input placeholder="nom" type="text" name="surname">
+            </div>
+          </div>
+          <div  class="field">
+            <div class="field">
+              <select name="Gender">
+                <option value="">Gender</option>
+                <option value="1">Male</option>
+                <option value="0">Female</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="Profession">Profession :</label>
+            <input type="text" id="Profession" name="Profession">  
+        </div>
+          <div class="field">
+            <label for="mail">e-mail :</label>
+            <input type="email" id="email" name="email" placeholder="me@stand4Agric.com">
+        </div>
+        <div class="field">
+            <label for="password">Mot de passe :</label>
+            <input type="password" id="password" name="password">  
+        </div>
+        <div class="field">
+          <label for="passwordConfirm">Confirmer Mot de pass :</label>
+          <input type="password" id="passwordConfirm" name="passwordConfirm">  
+        </div>
+        <div class="field">
+          <div class="ui checkbox">
+            <input type="checkbox" tabindex="0" class="hidden">
+            <label>I agree to the Terms and Conditions</label>
+          </div>
+        </div>
+        <div>
+          <button class="ui secondary button" type="submit">DEVENIR MEMBRE</button>
+        </div>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('../includes/footer.ejs') %>

@@ -1,0 +1,36 @@
+<%- include('../../includes/header.ejs') %>
+    <div>
+        <h2>Mes Articles</h2>
+        <% for (result of results) {%>
+          <div class="item">
+              <div class="ui small image">
+                <img src="/img/<%- result.photos %>">
+              </div>
+              <div class="middle aligned content">
+                <div class="header">
+                    <%- result.Titre %>
+                    <div class="extra">
+                      <a href="/admin/edit_article?id=<%- result.idArticles %>">
+                        <i class="edit icon"></i>
+                      </a>
+                      <a href="/admin/delete_article?id=<%- result.idArticles %>" onClick ="return confirm('êtes vous sure de vouloir supprimer cet article?')">
+                        <i class="trash icon"></i>
+                      </a>
+                  </div>
+                </div>
+                <div class="meta"><%- result.auteur %></div>
+                <div class="meta"><%- result.post_at %></div>
+                <div class="description">
+                  <%- result.content.slice(0, 500) %>
+                </div>
+                  <div class="extra">
+                  <a href="/article?id=<%- result.idArticles %>">
+                    <div class="ui grey basic button">LIRE</div>
+                  </a>
+                  </div>
+
+            </div>
+      <% }%>
+  </div>
+    </div>   
+    <%- include('../../includes/footer.ejs') %>

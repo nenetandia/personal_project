@@ -1,0 +1,53 @@
+<%- include('../includes/header.ejs') %>
+<div>
+    <h2>Biotechnologie Végétale</h2>
+    <!-- <a href="/article">La génie gentique, incoutpournable pour une sélection moderne</a>  -->
+    <% for (result of results) {%>
+    <div class="ui divided items">
+
+      <div class="item">
+        <div class="image">
+          <img src="/img/<%- result.photos %>">
+        </div>
+        <div class="content">
+          <a class="header"><%- result.Titre %></a>
+          <div class="meta">
+            <span class="cinema"><%- result.auteur %></span>
+            <span class="cinema"><%- result.post_at %></span>
+          </div>
+          <div class="description">
+            <p><%- result.content.slice(0, 500) %></p>
+          </div>
+          <div class="extra">
+            <a href="/article?id=<%- result.idArticles %>">
+             <div class="ui right floated button">
+              lire
+             </div>
+           </a>
+           </div>
+        </div>
+      </div>
+    </div>
+        <!-- <div class="item">
+            <div class="ui small image">
+              <img  src="/img/<%- result.photos %>">
+            </div>
+            <div class="middle aligned content">
+              <div class="header"><%- result.Titre %></div>
+              <div class="meta"><%- result.auteur %></div>
+              <div class="meta"><%- result.post_at %></div>
+              <div class="description">
+                <%- result.content.slice(0, 500) %>
+              </div>
+              <div class="extra">
+               <a href="/article?id=<%- result.idArticles %>">
+                <div class="ui right floated button">
+                 lire
+                </div>
+              </a>
+              </div>
+            </div>
+          </div> -->
+    <% }%>
+</div>
+<%- include('../includes/footer.ejs') %>

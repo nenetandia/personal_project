@@ -1,0 +1,51 @@
+<%- include('../includes/header.ejs') %>
+  
+<div>
+  <% if(locals.message) { %>
+    <h4 class="ui orange message "><%-  message%></h4>
+  <% }%>
+</div>
+<div>
+  <% if(locals.alertMessage) { %>
+    <h4 class="ui red message "><%- alertMessage%></h4>
+  <% }%>
+</div>
+<div class="adjust">
+<div class="ui card">
+  <div class="content">
+    <div class="header head">connexion</div>
+    <div class="description">
+        <form class="ui form" action="/Compte" method="post">
+            <div class="field">
+                <label for="mail">e-mail :</label>
+                <input type="email" id="mail" name="email" placeholder="nene@stand4agric.com">
+            </div>
+            <div class="field">
+                <label for="password">Mot de pass :</label>
+                <input type="password" id="password" name="password">  
+            </div>
+            <div class="field">
+              <div class="ui checkbox">
+                <input type="checkbox" tabindex="0" class="hidden">
+                <label>I agree to the Terms and Conditions</label>
+              </div>
+            </div>
+            <div>
+              <button class="ui secondary button close" type="submit">CONNEXION</button>
+            </div>
+            
+            </div>
+          </form>
+          <br>
+          <div>
+            <a  href="/inscription"> 
+              <button class="ui button close" type="submit">DEVENIR MEMBRE</button>
+            </a>
+          </div>
+        </div>
+      </div>
+  </div> 
+</div>
+</div>
+
+<%- include('../includes/footer.ejs') %>
